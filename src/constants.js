@@ -15,6 +15,7 @@ const LIMIT = '_limit';
 const SORT = '_sort';
 const ASC = 'asc';
 const DESC = 'desc';
+const TEXT = 'text';
 
 module.exports.CONTAINS = CONTAINS;
 module.exports.NCONTAINS = NCONTAINS;
@@ -27,7 +28,8 @@ module.exports.LIMIT = LIMIT;
 module.exports.SORT = SORT;
 module.exports.ASC = ASC;
 module.exports.DESC = DESC;
+module.exports.TEXT = TEXT;
 module.exports.sortSuffix = [SKIP, LIMIT, SORT];
 module.exports.allFilterSuffix = [
-  EQ, NE, LT, GT, LTE, GTE, IN, NIN, CONTAINS, NCONTAINS, CONTAINSS, NCONTAINSS,
+  EQ, NE, LT, GT, LTE, GTE, IN, NIN, CONTAINS, NCONTAINS, CONTAINSS, NCONTAINSS, TEXT,
 ];

@@ -1,6 +1,7 @@
 const {
   CONTAINS, CONTAINSS, NCONTAINS, NCONTAINSS, IN, NIN,
   LIMIT, SKIP, SORT, ASC, DESC, allFilterSuffix, sortSuffix,
+  TEXT
 } = require('../constants');
 
 module.exports.getPopulateAndSelect = (param) => {
@@ -91,6 +92,9 @@ module.exports.getQueryObj = (queryObj = {}) => {
             // eslint-disable-next-line no-case-declarations
             const ele = typeof queryObj[x] === 'string' ? [queryObj[x]] : queryObj[x];
             obj.query[field] = { [`$${queryEle}`]: ele };
+            break;
+          case (TEXT):
+            obj.query[field] = { $text: { $search: queryObj[x] } };
             break;
           default:
             obj.query[field] = { [`$${queryEle}`]: queryObj[x] };

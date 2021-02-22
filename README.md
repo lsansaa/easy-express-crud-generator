@@ -1,3 +1,7 @@
+# About this fork
+
+Modified version to add more features and filters
+
 # Easy Express CRUD Generator
 
 Simple express, mongoose based ```crud api generator```.
@@ -43,6 +47,8 @@ You should have [express](https://www.npmjs.com/package/express) app ready with 
     ```/city/name?name_containss=ambala```
   * ncontains: doesn't contains **Case Sensitive**
     ```/city/name?name_ncontainss=ambala```
+  * text: perform text searches on a collection with a text index. It use [mongodb text operator](https://docs.mongodb.com/manual/text-search/)
+    
 * **Sorting** can be done by following **query** keywords. ```_skip, _limit, _sort, asc, desc```
   * _skip: Skip ```n``` numbers of records
   ```/city/name?_skip=10```
