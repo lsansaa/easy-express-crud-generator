@@ -31,10 +31,10 @@ You should have [express](https://www.npmjs.com/package/express) app ready with 
     ```/city/name?name_eq=ambala```
   * ne: not equals
     ```/city/name?name_ne=ambala```
-  * lt: lower than
-  * gt: greater than
-  * lte: less than or equal to
-  * gte: greater than or equal to
+  * lt: lower than (Now can be used with gt and gte)
+  * gt: greater than (Now can be used with lt and lte)
+  * lte: less than or equal to (Now can be used with gt and gte)
+  * gte: greater than or equal to (Now can be used with lt and lte)
   * in: included in an array of values
     ```/city?name_in=ambala&name_in=mumbai&name_in=banglore```
   * nin: non included in an array of values
@@ -151,7 +151,7 @@ This is not the roboust library with lot's of functionalities. I just tried to d
 - [x] Add an example app
 - [x] Write test cases
 - [x] Error handling
-- [ ] Swtich to typescript
+- [ ] Switch to typescript
 
 I really hope my these small efforts may bring some help in your project.
 

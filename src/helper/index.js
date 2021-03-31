@@ -1,7 +1,7 @@
 const {
   CONTAINS, CONTAINSS, NCONTAINS, NCONTAINSS, IN, NIN,
   LIMIT, SKIP, SORT, ASC, DESC, allFilterSuffix, sortSuffix,
-  TEXT
+  TEXT, GTLT, GTLTE, GTELT, GTELTE
 } = require('../constants');
 
 module.exports.getPopulateAndSelect = (param) => {
@@ -95,6 +95,22 @@ module.exports.getQueryObj = (queryObj = {}) => {
             break;
           case (TEXT):
             obj.query[field] = { $text: { $search: queryObj[x] } };
+            break;
+          case (GT):
+          case (GTE):
+            if (obj.query[field] && (obj.query[field].hasOwnProperty("lt") || obj.query[field].hasOwnProperty("lte"))) {
+              obj.query[field][`$${queryEle}`] = queryObj[x];
+            } else {
+              obj.query[field] = { [`$${queryEle}`]: queryObj[x] };
+            }
+            break;
+          case (LT):
+          case (LTE):
+            if (obj.query[field] && (obj.query[field].hasOwnProperty("lt") || obj.query[field].hasOwnProperty("lte"))) {
+              obj.query[field][`$${queryEle}`] = queryObj[x];
+            } else {
+              obj.query[field] = { [`$${queryEle}`]: queryObj[x] };
+            }
             break;
           default:
             obj.query[field] = { [`$${queryEle}`]: queryObj[x] };
