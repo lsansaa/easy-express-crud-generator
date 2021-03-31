@@ -98,7 +98,7 @@ module.exports.getQueryObj = (queryObj = {}) => {
             break;
           case (GT):
           case (GTE):
-            if (obj.query[field] && (obj.query[field].hasOwnProperty("lt") || obj.query[field].hasOwnProperty("lte"))) {
+            if (obj.query[field] && (obj.query[field].hasOwnProperty("$lt") || obj.query[field].hasOwnProperty("$lte"))) {
               obj.query[field][`$${queryEle}`] = queryObj[x];
             } else {
               obj.query[field] = { [`$${queryEle}`]: queryObj[x] };
@@ -106,7 +106,7 @@ module.exports.getQueryObj = (queryObj = {}) => {
             break;
           case (LT):
           case (LTE):
-            if (obj.query[field] && (obj.query[field].hasOwnProperty("gt") || obj.query[field].hasOwnProperty("gte"))) {
+            if (obj.query[field] && (obj.query[field].hasOwnProperty("$gt") || obj.query[field].hasOwnProperty("$gte"))) {
               obj.query[field][`$${queryEle}`] = queryObj[x];
             } else {
               obj.query[field] = { [`$${queryEle}`]: queryObj[x] };

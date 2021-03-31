@@ -29,6 +29,10 @@ module.exports.SORT = SORT;
 module.exports.ASC = ASC;
 module.exports.DESC = DESC;
 module.exports.TEXT = TEXT;
+module.exports.GT = GT;
+module.exports.GTE = GTE;
+module.exports.LT = LT;
+module.exports.LTE = LTE;
 module.exports.sortSuffix = [SKIP, LIMIT, SORT];
 module.exports.allFilterSuffix = [
   EQ, NE, LT, GT, LTE, GTE, IN, NIN, CONTAINS, NCONTAINS, CONTAINSS, NCONTAINSS, TEXT,
