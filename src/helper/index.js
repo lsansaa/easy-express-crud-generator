@@ -1,7 +1,7 @@
 const {
   CONTAINS, CONTAINSS, NCONTAINS, NCONTAINSS, IN, NIN,
   LIMIT, SKIP, SORT, ASC, DESC, allFilterSuffix, sortSuffix,
-  TEXT, GTLT, GTLTE, GTELT, GTELTE
+  TEXT, GT, GTE, LT, LTE
 } = require('../constants');
 
 module.exports.getPopulateAndSelect = (param) => {
